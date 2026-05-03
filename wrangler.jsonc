@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "echats",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "echats-storagedata",
+          "database_id": "e2bc182a-e55e-4971-b159-dd728a1c26e3"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "52b17b2d4375429c838add12b8867ab2",
+            "binding": "SECRET",
+            "secret_name": "ECHATS"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
